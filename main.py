@@ -56,7 +56,7 @@ class GameView(Widget):
             Clock.unschedule(self.player.update)
 
         # player setup
-        self.player = Player(pos=(0, 200), size=(100, 100))
+        self.player = Player(pos=(0, 200), size=(50, 100))
         self.add_widget(self.player)
         self.player.velocity[1] = 0
         self.player.gravity = 0

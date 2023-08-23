@@ -50,7 +50,7 @@ class Player(Widget):
         self.canvas.clear()
         with self.canvas:
             # Color(0, 0, 1.)
-            Rectangle(pos=self.pos, size=self.size, source='boxplayer2.png', background_normal=Color(1, 1, 1))
+            Rectangle(pos=self.pos, size=self.size, source='player.png', background_normal=Color(1, 1, 1))
 
     def horizontal_acceleration(self, acc):
         if self.isMovingLeft:
