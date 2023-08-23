@@ -17,7 +17,7 @@ Config.set('graphics', 'multisamples', '0')
 Window.top = 120
 Window.left = 1000
 Window.size = (600, 800)
-Builder.load_file("GeoJump.kv")
+Builder.load_file("PipaJump.kv")
 
 
 class GameView(Widget):
@@ -189,7 +189,7 @@ class GameOverScreen(Screen):
     pass
 
 
-class GeoJumpApp(App):
+class PipaJumpApp(App):
     def build(self):
         screen_manager = ScreenManager(transition=CardTransition())
         screen_manager.add_widget(MenuScreen(name='menu'))
@@ -199,4 +199,4 @@ class GeoJumpApp(App):
 
 
 if __name__ == '__main__':
-    GeoJumpApp().run()
+    PipaJumpApp().run()
