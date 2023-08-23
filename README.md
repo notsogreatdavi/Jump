@@ -1,3 +1,2 @@
-# GeoJump
-A responsive, multi-platform clone of the classic mobile game: Doodle Jump. 
-Developed with the Python GUI framework, Kivy. Runs on Windows, Linux, MacOS, and Android.
+# Pipa Jumper
+Um jogo multi-plataforma feito para a disciplina de Projeto Interdisciplinar I com o professor Cícero Garrozi no primeiro período do curso de Sistemas de Informação na UFRPE(Universidade Federal Rural de Pernambuco) pelo aluno Davi Vieira da Silva.
