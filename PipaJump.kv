@@ -13,7 +13,7 @@
         Button:
             canvas.before:
                 Color:
-                    rgba: 0.6637, 0.004, 0.506, 0.8
+                    rgba: 255, 255, 0, 0.6
                 RoundedRectangle:
                     size: self.size
                     pos: self.pos
@@ -47,7 +47,7 @@
         center: root.center
         Label:
             text: 'PipaJumper'
-            font_size: 100
+            font_size: 50
             font_name:'Roboto-BoldItalic'
             text_size: self.size
 #            color: 0.2588, 0.9608, 0.306
@@ -57,7 +57,7 @@
 
         AnchorLayout:
             Button:
-                text: 'START JUMPING'
+                text: 'Start'
                 size_hint: None, None
                 font_size: 32
                 font_name:'Roboto-Bold'
@@ -95,8 +95,9 @@
         Label:
             font_size: 40
             size: 266, 100
-#            color: 0.98, 0.1588, 0.1588
-            color: 0.004, 0.922, 0.994, 1
+            color: 0.2, 0.98, 0.98
+            outline_width: 2
+            outline_color: 0, 0, 0, 1
             text: 'VOCÊ FOI APARADO PELA RABIOLA'
             font_name:'Roboto-BoldItalic'
             text_size: self.size
