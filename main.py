@@ -16,7 +16,7 @@ from kivy import Config
 Config.set('graphics', 'multisamples', '0')
 Window.top = 120
 Window.left = 1000
-Window.size = (600, 1080)
+Window.size = (600, 800)
 Builder.load_file("GeoJump.kv")
 
 
