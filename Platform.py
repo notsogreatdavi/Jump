@@ -1,12 +1,13 @@
 from kivy.animation import Animation
 from kivy.clock import Clock
 from kivy.graphics import Color, Rectangle
-from kivy.properties import ListProperty
+from kivy.properties import ListProperty, StringProperty
 from kivy.uix.widget import Widget
-
+from random import randint
 
 class Platform(Widget):
     velocity = ListProperty([0, 0])
+    image_source = StringProperty('nuvem_1.png')
 
     def __init__(self, player, isBooster, **kwargs):
         super(Platform, self).__init__(**kwargs)
@@ -34,10 +35,10 @@ class Platform(Widget):
         self.canvas.clear()
         with self.canvas:
             if not self.isBooster:
-                Color(1, 1, 1)
+                self.image_source = str('nuvem_1.png')
             else:
-               Color(0, 1, 0)
-            Rectangle(pos=self.pos, size=(175, 80), source='nuvem-1.png')
+                self.image_source = str('boost.png')
+            Rectangle(pos=self.pos, size=(175, 80), source=(self.image_source))
 
     def platform_player_collision(self):
         # check player collision with platforms
