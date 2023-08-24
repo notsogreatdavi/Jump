@@ -66,7 +66,7 @@
                 background_normal: ''
                 background_color: 0.004, 0.522, 0.694, 1
                 padding: 20, 20
-                on_release: root.manager.current = 'game'
+                on_release: root.manager.current = 'kite_selection'
         AnchorLayout:
             Button:
                 text: 'Quit'
@@ -130,3 +130,60 @@
                 size: self.texture_size
                 text: 'Quit'
                 on_release: exit()
+
+<KiteSelectionScreen>:
+    orientation: 'vertical'
+    canvas:
+        Rectangle:
+            pos: self.pos
+            size: self.size
+            source: 'menu_background.png'
+    ScrollView:
+        valign: 'center'
+        GridLayout:
+            cols: 3
+            size_hint_y: None
+            height: self.minimum_height
+            
+            Image:
+                id: player1
+                source: 'player.png'
+                width: '100dp'
+                
+            Button:
+                text: 'Select'
+                size_hint_y: None
+                height: '200dp'
+                on_release: 
+                    root.select_kite(player1.source)
+                    root.manager.transition = CardTransition()
+                    root.manager.current = 'game'
+                
+            Image:
+                id: player2
+                source: 'player2.png'
+                width: '100dp'
+                
+            Button:
+                text: 'Select'
+                size_hint_y: None
+                height: '200dp'
+                on_release: 
+                    root.select_kite(player2.source)
+                    root.manager.transition = CardTransition()
+                    root.manager.current = 'game'
+
+            Image:
+                id: player3
+                source: 'player3.png'
+                width: '100dp'
+            
+            Button:
+                text: 'Select'
+                size_hint_y: None
+                height: '200dp'
+                on_release: 
+                    root.select_kite(player3.source)
+                    root.manager.transition = CardTransition()
+                    root.manager.current = 'game'
+            

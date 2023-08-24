@@ -1,12 +1,15 @@
 from kivy.clock import Clock
 from kivy.core.window import Window
 from kivy.graphics import Color, Rectangle, Scale
-from kivy.properties import ListProperty
+from kivy.properties import ListProperty, StringProperty
 from kivy.uix.widget import Widget
 
 
 class Player(Widget):
     velocity = ListProperty([0, 0])
+    global player_kite
+    player_image = StringProperty("")
+    player_kite = ''
 
     def __init__(self, **kwargs):
         super(Player, self).__init__(**kwargs)
@@ -49,8 +52,11 @@ class Player(Widget):
     def draw(self):
         self.canvas.clear()
         with self.canvas:
-            # Color(0, 0, 1.)
-            Rectangle(pos=self.pos, size=self.size, source='player.png', background_normal=Color(1, 1, 1))
+            def select_kite(self, button):
+                selected_image = button.parent.children[0]
+                player_kite = str(selected_image)
+            self.player_image = player_kite
+            Rectangle(pos=self.pos, size=self.size, source=self.player_image, background_normal=Color(1, 1, 1))
 
     def horizontal_acceleration(self, acc):
         if self.isMovingLeft:

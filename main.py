@@ -6,6 +6,9 @@ from kivy.core.window import Window
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition, NoTransition, CardTransition
 from kivy.uix.widget import Widget
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.button import Button
+from kivy.uix.image import Image
 from kivy.properties import StringProperty, NumericProperty, ReferenceListProperty
 from MovingPlatform import MovingPlatform
 from Platform import Platform
@@ -175,6 +178,11 @@ class GameView(Widget):
             self.player.isMovingRight = False
 
 
+class KiteSelectionScreen(Screen):
+    def select_kite(self, selected_image):
+        global  player_kite
+        player_kite = str(selected_image)
+
 class GameScreen(Screen):
     def on_enter(self):
         gameView = self.ids['game']
@@ -195,6 +203,7 @@ class PipaJumpApp(App):
         screen_manager.add_widget(MenuScreen(name='menu'))
         screen_manager.add_widget(GameScreen(name='game'))
         screen_manager.add_widget(GameOverScreen(name='game_over'))
+        screen_manager.add_widget(KiteSelectionScreen(name="kite_selection"))
         return screen_manager
 
 
