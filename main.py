@@ -1,5 +1,5 @@
 # make two circles that collide into each other and bounce around in the screen
-from random import random
+from random import random, randint
 from kivy.app import App
 from kivy.clock import Clock
 from kivy.core.window import Window
@@ -69,7 +69,7 @@ class GameView(Widget):
         self.add_widget(p)
         self.platform_group = [p1, p]
         for i in range(10):
-            p = Platform(self.player, isBooster=False, pos=(0, (75 * (i + 1)) + 200), size=(175, 15))
+            p = Platform(self.player, isBooster=False, pos=(randint(0, 600), (75 * (i + 1)) + 200), size=(175, 15))
             self.add_widget(p)
             self.platform_group.append(p)
         # self.create_platforms(20, 70)
