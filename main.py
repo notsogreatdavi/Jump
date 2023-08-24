@@ -75,7 +75,7 @@ class GameView(Widget):
         # self.create_platforms(20, 70)
 
     def update(self, *args):
-        # don't update if game hasn't started
+        # don't update if game hasn'dt started
         if not self.game_has_started:
             return
         # update the score

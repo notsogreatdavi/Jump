@@ -34,10 +34,10 @@ class Platform(Widget):
         self.canvas.clear()
         with self.canvas:
             if not self.isBooster:
-                Color(1., 1., 1.)
+                Color(1, 1, 1)
             else:
-                Color(0., 1., 0.)
-            Rectangle(pos=self.pos, size=(175, 15))
+               Color(0, 1, 0)
+            Rectangle(pos=self.pos, size=(175, 80), source='nuvem-1.png')
 
     def platform_player_collision(self):
         # check player collision with platforms
