@@ -133,57 +133,87 @@
 
 <KiteSelectionScreen>:
     orientation: 'vertical'
+
     canvas:
         Rectangle:
             pos: self.pos
             size: self.size
             source: 'menu_background.png'
-    ScrollView:
-        valign: 'center'
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: self.minimum_height
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
         GridLayout:
             cols: 3
             size_hint_y: None
             height: self.minimum_height
-            
-            Image:
-                id: player1
-                source: 'player.png'
-                width: '100dp'
-                
-            Button:
-                text: 'Select'
-                size_hint_y: None
-                height: '200dp'
-                on_release: 
-                    root.select_kite(player1.source)
-                    root.manager.transition = CardTransition()
-                    root.manager.current = 'game'
-                
-            Image:
-                id: player2
-                source: 'player2.png'
-                width: '100dp'
-                
-            Button:
-                text: 'Select'
-                size_hint_y: None
-                height: '200dp'
-                on_release: 
-                    root.select_kite(player2.source)
-                    root.manager.transition = CardTransition()
-                    root.manager.current = 'game'
+            spacing: '10dp'
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: None, None
+                size: 150, 200
+                halign: 'center'
+                valign: 'center'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
 
-            Image:
-                id: player3
-                source: 'player3.png'
-                width: '100dp'
-            
-            Button:
-                text: 'Select'
-                size_hint_y: None
-                height: '200dp'
-                on_release: 
-                    root.select_kite(player3.source)
-                    root.manager.transition = CardTransition()
-                    root.manager.current = 'game'
+                Image:
+                    id: player1
+                    source: 'player.png'
+                    size: 100, 100
+                
+                Button:
+                    text: 'Select'
+                    size_hint_y: None
+                    height: '50dp'
+                    on_release: 
+                        root.select_kite(player1.source)
+                        root.manager.transition = CardTransition()
+                        root.manager.current = 'game'
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: None, None
+                size: 150, 200
+                halign: 'center'
+                valign: 'center'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+                Image:
+                    id: player2
+                    source: 'player2.png'
+                    size: 100,100
+                
+                Button:
+                    text: 'Select'
+                    size_hint_y: None
+                    height: '50dp'
+                    on_release: 
+                        root.select_kite(player2.source)
+                        root.manager.transition = CardTransition()
+                        root.manager.current = 'game'
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: None, None
+                size: 150, 200
+                halign: 'center'
+                valign: 'center'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                
+                Image:
+                    id: player3
+                    source: 'player3.png'
+                    size: 100,100
+                
+                Button:
+                    text: 'Select'
+                    size_hint_y: None
+                    height: '50dp'
+                    on_release: 
+                        root.select_kite(player3.source)
+                        root.manager.transition = CardTransition()
+                        root.manager.current = 'game'
+                
             

@@ -7,9 +7,7 @@ from kivy.uix.widget import Widget
 
 class Player(Widget):
     velocity = ListProperty([0, 0])
-    global player_kite
-    player_image = StringProperty("")
-    player_kite = ''
+    player_image = StringProperty("player.png")
 
     def __init__(self, **kwargs):
         super(Player, self).__init__(**kwargs)
@@ -52,10 +50,6 @@ class Player(Widget):
     def draw(self):
         self.canvas.clear()
         with self.canvas:
-            def select_kite(self, button):
-                selected_image = button.parent.children[0]
-                player_kite = str(selected_image)
-            self.player_image = player_kite
             Rectangle(pos=self.pos, size=self.size, source=self.player_image, background_normal=Color(1, 1, 1))
 
     def horizontal_acceleration(self, acc):

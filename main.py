@@ -180,8 +180,7 @@ class GameView(Widget):
 
 class KiteSelectionScreen(Screen):
     def select_kite(self, selected_image):
-        global  player_kite
-        player_kite = str(selected_image)
+        Player.player_image = str(selected_image)
 
 class GameScreen(Screen):
     def on_enter(self):
